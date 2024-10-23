@@ -534,3 +534,30 @@ form h2 .SocialLinks i:hover{
 .about-us{
     overflow: auto;
 }
+@media (max-width: 600px) {
+    aside {
+        width: 60px; /* Minimize sidebar */
+    }
+
+    .Links p {
+        display: none; /* Hide text in sidebar to save space */
+    }
+
+    aside li {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    main {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        width: 100%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    header, section {
+        padding: 10px;
+    }
+}
