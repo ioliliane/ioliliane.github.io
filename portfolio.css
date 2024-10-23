@@ -536,11 +536,11 @@ form h2 .SocialLinks i:hover{
 }
 @media (max-width: 600px) {
     aside {
-        width: 60px; /* Minimize sidebar */
+        width: 60px;
     }
 
     .Links p {
-        display: none; /* Hide text in sidebar to save space */
+        display: none;
     }
 
     aside li {
@@ -549,8 +549,10 @@ form h2 .SocialLinks i:hover{
     }
 
     main {
-        flex-direction: column; /* Stack elements vertically on mobile */
-        width: 100%;
+        flex: 1;
+        width: calc(100% - 60px); /* Main content takes up remaining space */
+        margin-left: 60px; /* Shift content next to the sidebar */
+        padding: 10px;
     }
 
     body {
