@@ -534,50 +534,43 @@ form h2 .SocialLinks i:hover{
 .about-us{
     overflow: auto;
 }
+/* Hide the sidebar on mobile screens (max-width: 600px) */
 @media (max-width: 600px) {
-    /* Minimize sidebar width */
     aside {
-        width: 60px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh; /* Full height sidebar */
-        z-index: 1000;
-        background-color: #333; /* Ensure sidebar is visually distinct */
+        display: none; /* Completely hide the sidebar */
     }
 
-    /* Hide the sidebar text links */
-    .Links p {
-        display: none;
-    }
-
-    /* Adjust the sidebar items */
-    aside li {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-
-    /* Ensure the main content shifts next to the sidebar */
     main {
-        margin-left: 60px; /* Account for the sidebar width */
+        margin-left: 0; /* Remove the space for the sidebar */
+        width: 100%; /* Make the main content take up the full width */
         padding: 10px;
-        width: calc(100% - 60px); /* Take remaining space */
     }
 
-    /* Adjust the layout of main elements for mobile */
-    body, header, section {
-        padding: 10px;
+    /* Adjust font sizes and padding for mobile */
+    body {
         font-size: 14px;
     }
 
-    /* Ensure content stacks vertically on small screens */
-    section {
-        width: 100%;
+    header, section {
+        padding: 10px;
     }
 
-    /* Ensure images and media fit within the screen */
     img, video {
         max-width: 100%;
         height: auto;
+    }
+}
+
+/* Keep the sidebar visible on larger screens */
+@media (min-width: 601px) {
+    aside {
+        width: 280px; /* Regular sidebar size for desktop */
+        position: relative; /* Normal flow for desktop */
+    }
+
+    main {
+        margin-left: 280px; /* Reserve space for the sidebar */
+        width: calc(100% - 280px); /* Main content takes remaining space */
+        padding: 10px;
     }
 }
