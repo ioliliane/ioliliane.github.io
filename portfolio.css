@@ -535,31 +535,49 @@ form h2 .SocialLinks i:hover{
     overflow: auto;
 }
 @media (max-width: 600px) {
+    /* Minimize sidebar width */
     aside {
         width: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh; /* Full height sidebar */
+        z-index: 1000;
+        background-color: #333; /* Ensure sidebar is visually distinct */
     }
 
+    /* Hide the sidebar text links */
     .Links p {
         display: none;
     }
 
+    /* Adjust the sidebar items */
     aside li {
         padding: 10px;
         font-size: 0.8rem;
     }
 
+    /* Ensure the main content shifts next to the sidebar */
     main {
-        flex: 1;
-        width: calc(100% - 60px); /* Main content takes up remaining space */
-        margin-left: 60px; /* Shift content next to the sidebar */
+        margin-left: 60px; /* Account for the sidebar width */
         padding: 10px;
+        width: calc(100% - 60px); /* Take remaining space */
     }
 
-    body {
+    /* Adjust the layout of main elements for mobile */
+    body, header, section {
+        padding: 10px;
         font-size: 14px;
     }
 
-    header, section {
-        padding: 10px;
+    /* Ensure content stacks vertically on small screens */
+    section {
+        width: 100%;
+    }
+
+    /* Ensure images and media fit within the screen */
+    img, video {
+        max-width: 100%;
+        height: auto;
     }
 }
